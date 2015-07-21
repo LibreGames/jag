@@ -1,0 +1,69 @@
+QStackedWidget, QDialog {background-color: rgb(32,32,32); border: 1px solid #3c3c3c; border-radius: 5px}
+QPushButton {background-color: qlineargradient(x1:0, y1:0, x2:0, y2:1,
+                             stop:0 #313131, stop: 0.5 #202020,
+                             stop: 0.6 #131313, stop:1 #353535);
+           color: white; border: 1px solid #3c3c3c; font: 14pt "Helvetica"; border-radius: 5px
+}
+QPushButton:hover {background-color: qlineargradient(x1:0, y1:0, x2:0, y2:1,
+                             stop:0 #616161, stop: 0.5 #505050,
+                             stop: 0.6 #434343, stop:1 #656565);
+}
+QLabel {color: white; font: 14pt "Helvetica"}
+QGroupBox {color: #99ccff; font: 12pt "Helvetica";
+          border: 1px solid gray; border-radius: 5px; margin-top: 1ex; padding-top: 2ex}
+QGroupBox::title {subcontrol-origin: margin; left: 10px; top: 0ex}	
+QListWidget, QLineEdit {font: 14pt "Helvetica";
+                    background-color: qlineargradient(x1:0, y1:0, x2:0, y2:1,
+                                      stop:0 #d1d1d1, stop: 0.5 #c0c0c0,
+                                      stop: 0.6 #b3b3b3, stop:1 #d5d5d5);
+}
+QRadioButton, QCheckBox {color: white; background-color: transparent; font: 12pt "Helvetica"}
+QCheckBox::indicator {color: black; }
+
+QGroupBox:disabled, QPushButton:disabled {color: #888888}
+QTableWidget {background-color: rgb(64,64,64); color: white; font: 14pt "Helvetica"; gridline-color: gray}
+QHeaderView::section {
+     background-color: qlineargradient(x1:0, y1:0, x2:0, y2:1,
+                                       stop:0 #616161, stop: 0.5 #505050,
+                                       stop: 0.6 #434343, stop:1 #656565);
+     color: white;
+     padding-left: 4px;
+     border: 1px solid #6c6c6c;
+	 font: 12pt "Helvetica";
+}
+QTextEdit {background-color: rgb(32,32,32); border: 1px solid #3c3c3c}
+QScrollBar:vertical {
+      border: 1px solid #5c5c5c;
+      background: #3c3c3c;
+      width: 15px;
+      margin: 22px 0 22px 0;
+}
+QScrollBar::handle:vertical {
+      background-color: qlineargradient(x1:0, y1:0, x2:0, y2:1,
+                                       stop:0 #616161, stop: 0.5 #505050,
+                                       stop:1 #656565);
+      min-height: 20px;
+}
+QScrollBar::add-line:vertical {
+      border: 1px solid #5c5c5c;
+      background: #3c3c3c;
+      height: 20px;
+      subcontrol-position: bottom;
+      subcontrol-origin: margin;
+}
+QScrollBar::sub-line:vertical {
+      border: 1px solid #5c5c5c;
+      background: #3c3c3c;
+      height: 20px;
+      subcontrol-position: top;
+      subcontrol-origin: margin;
+}
+QScrollBar::up-arrow:vertical, QScrollBar::down-arrow:vertical {
+      border: 1px solid #5c5c5c;
+      width: 3px;
+      height: 3px;
+      background: white;
+}
+QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {
+      background: none;
+}

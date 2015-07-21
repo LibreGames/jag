@@ -1,0 +1,171 @@
+JAG: Freeware crossplatform 2D arcade-puzzle game
+
+version 0.3.1
+
+XlabSoft & Industrial Infosystems 2009-2010
+
+----------------------------------------------------------------------------------
+LICENSE
+
+This software is free and is distributed according to GPL and compatible licenses.
+Full text of GPL and more you can read here: 
+  http://www.fsf.org/licensing/licenses/gpl.html
+
+----------------------------------------------------------------------------------
+ABOUT THE JAG
+
+JAG is a match-three 2D game which runs on Linux, Windows and FreeBSD. 
+JAG was created using only free development software and free resources.
+
+----------------------------------------------------------------------------------
+SUPPORTED PLATFORMS
+
+Since JAG is based on Qt4/SDL frameworks, all the platforms supported by them 
+should be able to build and launch the game.
+
+In particular:
+- MS Windows 7, Vista, XP
+- All Linux OS
+- FreeBSD
+
+----------------------------------------------------------------------------------
+INSTALLATION
+
+Installation manual can be found here: http://jag.xlabsoft.com/install.php
+
+----------------------------------------------------------------------------------
+UPDATES
+  
+Updates, additional level packs and schemes can be downloaded from JAG's website: 
+
+http://jag.xlabsoft.com 
+
+---------------------------------------------------------------------------------
+CHANGELOG
+
+0.3.1
+
+- added German translation (thanks to Kristjan Schmidt)
+
+- improvements:
+	- main menu is centered to be visible even if JAG's main window cannot fit on the screen
+
+- fixes:
+	- broken font in dialogs with low screen resolution
+	- alternative detection of video modes on X11 if xrandr fails
+	- some compiler warnings removed
+	- some memory leaks removed
+	
+
+0.3.0
+
+- added kde-ctystal scheme
+
+- improvements:
+	- added support of different resolutions
+	- player configuration dialog simplified
+	- added version output
+	
+- fixes:
+	- fixed potential crash during play
+	- fixed issue when loading a scheme with no background files
+
+
+0.2.6
+
+- gameplay changes:
+	- added new level pack 'SunZero' with 50 levels
+	- added Russian language translation
+	
+- fixes:
+    - fixed graphic themes selection dialog
+
+	
+0.2.5
+
+- improvements:
+	- levelpack format improved
+	- level editor added to install
+	
+- fixes:
+    - some missing resources files added to install
+	- changed colors for collected items
+
+
+0.2.4
+
+- added some visual fx
+
+- gameplay changes:
+	- time x1.5 bonus for hard difficulty
+	- tool prices and order changed
+	- score bonus is the most expensive one now
+	- default level pack redesigned
+
+- fixes:
+    - fixed level start with no level pack available
+	- fixed new game settings (mode and difficulty)
+	- fixed issue with wrong path to data on Linux
+	
+- improvements:
+	- clicking on player name and levelpack in main menu shows menu
+
+
+0.2.3
+
+- gameplay changes:
+	- permanent time bonus gives +30 seconds instead of +10
+	- permanent score bonus gives +1 point for every destroyed target only, not item
+	- item types count on level is const for difficulty level
+      (easy - 4, normal - 5, hard - 6)
+	- no time x1.5 bonus for easy level
+	
+- fixes:
+    - fixed hanging when no moves on level
+	- fixed odd scoring when no data folder found
+
+
+0.2.2
+
+- gameplay changes:
+	- bonus and tools are now given after passing some levels
+	- bonus for a remaining time decreased
+	- some levels redesigned to be easier to play
+
+- fixes:
+	- linux: now should work without installation
+	- fixed flashing of items after appear at the beginning of the level
+	- no hint drawing while showing statistics
+	
+- improvements:
+	- added "Restart level" button
+	- improved move hinting 
+	- now tools can be canceled by placing back
+	- game progress saved for each levelpack
+	- player profile format changed to XML
+
+
+0.2.1
+
+- gameplay changes:
+	- timer tool: 60 seconds  now
+	- puzzle mode has no time limit
+
+- fixes:
+	- fix of occasional reactivation of the tools while starting a new level
+	- no hint drawing for inactive tools
+	- fixed changing of the theme during the game
+	
+- improvements:
+	- added auto-pause when loosing focus
+
+
+0.2.0
+
+- a lot of fixes
+- gameplay changed
+
+
+0.1.0
+
+- initial release

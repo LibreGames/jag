@@ -1,0 +1,811 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>612</width>
+    <height>730</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>JAG Level Editor v0.1.0</string>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <layout class="QGridLayout" name="gridLayout_8">
+    <item row="0" column="0">
+     <widget class="LevelWidget" name="twLevel">
+      <property name="minimumSize">
+       <size>
+        <width>100</width>
+        <height>100</height>
+       </size>
+      </property>
+      <property name="contextMenuPolicy">
+       <enum>Qt::NoContextMenu</enum>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>48</width>
+        <height>48</height>
+       </size>
+      </property>
+      <property name="gridStyle">
+       <enum>Qt::DotLine</enum>
+      </property>
+      <attribute name="horizontalHeaderDefaultSectionSize">
+       <number>56</number>
+      </attribute>
+      <attribute name="horizontalHeaderMinimumSectionSize">
+       <number>56</number>
+      </attribute>
+      <attribute name="verticalHeaderDefaultSectionSize">
+       <number>56</number>
+      </attribute>
+      <attribute name="verticalHeaderMinimumSectionSize">
+       <number>56</number>
+      </attribute>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>612</width>
+     <height>24</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menu_File">
+    <property name="title">
+     <string>&amp;File</string>
+    </property>
+    <addaction name="actionNew"/>
+    <addaction name="action_Open"/>
+    <addaction name="action_Save"/>
+    <addaction name="actionSave_as"/>
+    <addaction name="separator"/>
+    <addaction name="actionCreate_levelpack"/>
+    <addaction name="actionExtract_levelpack"/>
+    <addaction name="separator"/>
+    <addaction name="actionE_xit"/>
+   </widget>
+   <widget class="QMenu" name="menu_Edit">
+    <property name="title">
+     <string>&amp;Edit</string>
+    </property>
+    <addaction name="actionShow_properties"/>
+   </widget>
+   <widget class="QMenu" name="menuHelp">
+    <property name="title">
+     <string>Help</string>
+    </property>
+    <addaction name="actionAbout"/>
+   </widget>
+   <addaction name="menu_File"/>
+   <addaction name="menu_Edit"/>
+   <addaction name="menuHelp"/>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+  <widget class="QDockWidget" name="dockWidget">
+   <property name="floating">
+    <bool>true</bool>
+   </property>
+   <property name="windowTitle">
+    <string>Properties editor</string>
+   </property>
+   <attribute name="dockWidgetArea">
+    <number>1</number>
+   </attribute>
+   <widget class="QWidget" name="dockWidgetContents">
+    <layout class="QGridLayout" name="gridLayout_7">
+     <item row="0" column="0">
+      <widget class="QGroupBox" name="groupBox">
+       <property name="title">
+        <string>Level properties</string>
+       </property>
+       <layout class="QGridLayout" name="gridLayout">
+        <item row="0" column="0">
+         <widget class="QLabel" name="label_6">
+          <property name="text">
+           <string>Level default time</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="1">
+         <widget class="QSpinBox" name="sbTime">
+          <property name="suffix">
+           <string> min</string>
+          </property>
+          <property name="minimum">
+           <number>1</number>
+          </property>
+          <property name="maximum">
+           <number>10000</number>
+          </property>
+          <property name="value">
+           <number>5</number>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QLabel" name="label_7">
+          <property name="text">
+           <string>Level items count</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="1">
+         <widget class="QSpinBox" name="sbItems">
+          <property name="suffix">
+           <string/>
+          </property>
+          <property name="minimum">
+           <number>2</number>
+          </property>
+          <property name="maximum">
+           <number>6</number>
+          </property>
+          <property name="value">
+           <number>5</number>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </item>
+     <item row="1" column="0">
+      <widget class="QGroupBox" name="gbProperties">
+       <property name="title">
+        <string>Cell properties</string>
+       </property>
+       <layout class="QGridLayout" name="gridLayout_4">
+        <property name="margin">
+         <number>4</number>
+        </property>
+        <property name="spacing">
+         <number>4</number>
+        </property>
+        <item row="0" column="0">
+         <widget class="QCheckBox" name="cbConcrete">
+          <property name="text">
+           <string>Concrete (playable)</string>
+          </property>
+          <property name="icon">
+           <iconset resource="editor.qrc">
+            <normaloff>:/images/concrete.png</normaloff>:/images/concrete.png</iconset>
+          </property>
+          <property name="tristate">
+           <bool>false</bool>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QGroupBox" name="gbTarget">
+          <property name="enabled">
+           <bool>false</bool>
+          </property>
+          <property name="title">
+           <string>Target cell</string>
+          </property>
+          <layout class="QGridLayout" name="gridLayout_2">
+           <property name="margin">
+            <number>4</number>
+           </property>
+           <property name="spacing">
+            <number>4</number>
+           </property>
+           <item row="0" column="0">
+            <widget class="QRadioButton" name="rbNoTarget">
+             <property name="text">
+              <string>None</string>
+             </property>
+             <property name="icon">
+              <iconset resource="editor.qrc">
+               <normaloff>:/images/concrete.png</normaloff>:/images/concrete.png</iconset>
+             </property>
+             <property name="checkable">
+              <bool>true</bool>
+             </property>
+             <property name="autoExclusive">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="0">
+            <widget class="QRadioButton" name="rbTarget1">
+             <property name="text">
+              <string>Target 1</string>
+             </property>
+             <property name="icon">
+              <iconset resource="editor.qrc">
+               <normaloff>:/images/target1.png</normaloff>:/images/target1.png</iconset>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="0">
+            <widget class="QRadioButton" name="rbTarget2">
+             <property name="text">
+              <string>Target 2</string>
+             </property>
+             <property name="icon">
+              <iconset resource="editor.qrc">
+               <normaloff>:/images/target2.png</normaloff>:/images/target2.png</iconset>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item row="2" column="0">
+         <widget class="QGroupBox" name="gbBlock">
+          <property name="enabled">
+           <bool>false</bool>
+          </property>
+          <property name="title">
+           <string>Blocked cell</string>
+          </property>
+          <layout class="QGridLayout" name="gridLayout_3">
+           <property name="margin">
+            <number>4</number>
+           </property>
+           <property name="spacing">
+            <number>4</number>
+           </property>
+           <item row="0" column="0">
+            <widget class="QRadioButton" name="rbNoBlock">
+             <property name="text">
+              <string>None</string>
+             </property>
+             <property name="icon">
+              <iconset resource="editor.qrc">
+               <normaloff>:/images/concrete.png</normaloff>:/images/concrete.png</iconset>
+             </property>
+             <property name="checked">
+              <bool>false</bool>
+             </property>
+             <property name="autoExclusive">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="0">
+            <widget class="QRadioButton" name="rbBlock1">
+             <property name="text">
+              <string>Block 1</string>
+             </property>
+             <property name="icon">
+              <iconset resource="editor.qrc">
+               <normaloff>:/images/block1.png</normaloff>:/images/block1.png</iconset>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="0">
+            <widget class="QRadioButton" name="rbBlock2">
+             <property name="text">
+              <string>Block 2</string>
+             </property>
+             <property name="icon">
+              <iconset resource="editor.qrc">
+               <normaloff>:/images/block2.png</normaloff>:/images/block2.png</iconset>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item row="3" column="0">
+         <widget class="QCheckBox" name="cbAppear">
+          <property name="enabled">
+           <bool>false</bool>
+          </property>
+          <property name="text">
+           <string>Appear cell</string>
+          </property>
+          <property name="icon">
+           <iconset resource="editor.qrc">
+            <normaloff>:/images/appear.png</normaloff>:/images/appear.png</iconset>
+          </property>
+          <property name="tristate">
+           <bool>false</bool>
+          </property>
+         </widget>
+        </item>
+        <item row="4" column="0">
+         <widget class="QCheckBox" name="cbItemOnStart">
+          <property name="enabled">
+           <bool>false</bool>
+          </property>
+          <property name="text">
+           <string>Has Item on start</string>
+          </property>
+          <property name="icon">
+           <iconset resource="editor.qrc">
+            <normaloff>:/images/onstart.png</normaloff>:/images/onstart.png</iconset>
+          </property>
+          <property name="tristate">
+           <bool>false</bool>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </item>
+     <item row="3" column="0">
+      <widget class="QGroupBox" name="groupBox_4">
+       <property name="title">
+        <string>Statistics</string>
+       </property>
+       <layout class="QGridLayout" name="gridLayout_5">
+        <property name="margin">
+         <number>4</number>
+        </property>
+        <property name="spacing">
+         <number>4</number>
+        </property>
+        <item row="0" column="0">
+         <widget class="QLabel" name="lStatistics">
+          <property name="text">
+           <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:8pt;&quot;&gt;Playable cells: &lt;/span&gt;&lt;span style=&quot; font-size:8pt; font-weight:600;&quot;&gt;180&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:8pt;&quot;&gt;Targets: &lt;/span&gt;&lt;span style=&quot; font-size:8pt; font-weight:600;&quot;&gt;30 (10+20)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:8pt;&quot;&gt;Blocks: &lt;/span&gt;&lt;span style=&quot; font-size:8pt; font-weight:600;&quot;&gt;5 (5+0)&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </item>
+     <item row="5" column="0">
+      <spacer name="verticalSpacer">
+       <property name="orientation">
+        <enum>Qt::Vertical</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>20</width>
+         <height>11</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item row="4" column="0">
+      <widget class="QGroupBox" name="gbDraw">
+       <property name="title">
+        <string>Draw</string>
+       </property>
+       <layout class="QGridLayout" name="gridLayout_6">
+        <property name="margin">
+         <number>4</number>
+        </property>
+        <property name="spacing">
+         <number>4</number>
+        </property>
+        <item row="0" column="0">
+         <widget class="QToolButton" name="tbSelect">
+          <property name="minimumSize">
+           <size>
+            <width>48</width>
+            <height>48</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>48</width>
+            <height>48</height>
+           </size>
+          </property>
+          <property name="toolTip">
+           <string>Select</string>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="icon">
+           <iconset resource="editor.qrc">
+            <normaloff>:/images/cursor.png</normaloff>:/images/cursor.png</iconset>
+          </property>
+          <property name="iconSize">
+           <size>
+            <width>40</width>
+            <height>40</height>
+           </size>
+          </property>
+          <property name="checkable">
+           <bool>true</bool>
+          </property>
+          <property name="checked">
+           <bool>true</bool>
+          </property>
+          <property name="autoExclusive">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="1">
+         <widget class="QToolButton" name="tbNoPlace">
+          <property name="minimumSize">
+           <size>
+            <width>48</width>
+            <height>48</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>48</width>
+            <height>48</height>
+           </size>
+          </property>
+          <property name="toolTip">
+           <string>Non-playable cell</string>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="icon">
+           <iconset resource="editor.qrc">
+            <normaloff>:/images/noplace.png</normaloff>:/images/noplace.png</iconset>
+          </property>
+          <property name="iconSize">
+           <size>
+            <width>40</width>
+            <height>40</height>
+           </size>
+          </property>
+          <property name="checkable">
+           <bool>true</bool>
+          </property>
+          <property name="autoExclusive">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="2">
+         <widget class="QToolButton" name="tbConcrete">
+          <property name="minimumSize">
+           <size>
+            <width>48</width>
+            <height>48</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>48</width>
+            <height>48</height>
+           </size>
+          </property>
+          <property name="toolTip">
+           <string>Clear cell</string>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="icon">
+           <iconset resource="editor.qrc">
+            <normaloff>:/images/concrete.png</normaloff>:/images/concrete.png</iconset>
+          </property>
+          <property name="iconSize">
+           <size>
+            <width>40</width>
+            <height>40</height>
+           </size>
+          </property>
+          <property name="checkable">
+           <bool>true</bool>
+          </property>
+          <property name="autoExclusive">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QToolButton" name="tbAppear">
+          <property name="minimumSize">
+           <size>
+            <width>48</width>
+            <height>48</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>48</width>
+            <height>48</height>
+           </size>
+          </property>
+          <property name="toolTip">
+           <string>Appear cell (left button - draw, right - erase)</string>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="icon">
+           <iconset resource="editor.qrc">
+            <normaloff>:/images/appear.png</normaloff>:/images/appear.png</iconset>
+          </property>
+          <property name="iconSize">
+           <size>
+            <width>40</width>
+            <height>40</height>
+           </size>
+          </property>
+          <property name="checkable">
+           <bool>true</bool>
+          </property>
+          <property name="autoExclusive">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="1">
+         <widget class="QToolButton" name="tbTarget1">
+          <property name="minimumSize">
+           <size>
+            <width>48</width>
+            <height>48</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>48</width>
+            <height>48</height>
+           </size>
+          </property>
+          <property name="toolTip">
+           <string>Target 1 (left button - draw, right - erase)</string>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="icon">
+           <iconset resource="editor.qrc">
+            <normaloff>:/images/target1.png</normaloff>:/images/target1.png</iconset>
+          </property>
+          <property name="iconSize">
+           <size>
+            <width>40</width>
+            <height>40</height>
+           </size>
+          </property>
+          <property name="checkable">
+           <bool>true</bool>
+          </property>
+          <property name="autoExclusive">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="2">
+         <widget class="QToolButton" name="tbTarget2">
+          <property name="minimumSize">
+           <size>
+            <width>48</width>
+            <height>48</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>48</width>
+            <height>48</height>
+           </size>
+          </property>
+          <property name="toolTip">
+           <string>Target 2 (left button - draw, right - erase)</string>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="icon">
+           <iconset resource="editor.qrc">
+            <normaloff>:/images/target2.png</normaloff>:/images/target2.png</iconset>
+          </property>
+          <property name="iconSize">
+           <size>
+            <width>40</width>
+            <height>40</height>
+           </size>
+          </property>
+          <property name="checkable">
+           <bool>true</bool>
+          </property>
+          <property name="autoExclusive">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="0">
+         <widget class="QToolButton" name="tbOnStart">
+          <property name="minimumSize">
+           <size>
+            <width>48</width>
+            <height>48</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>48</width>
+            <height>48</height>
+           </size>
+          </property>
+          <property name="toolTip">
+           <string>Has item on start (left button - draw, right - erase)</string>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="icon">
+           <iconset resource="editor.qrc">
+            <normaloff>:/images/onstart.png</normaloff>:/images/onstart.png</iconset>
+          </property>
+          <property name="iconSize">
+           <size>
+            <width>40</width>
+            <height>40</height>
+           </size>
+          </property>
+          <property name="checkable">
+           <bool>true</bool>
+          </property>
+          <property name="autoExclusive">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="1">
+         <widget class="QToolButton" name="tbBlock1">
+          <property name="minimumSize">
+           <size>
+            <width>48</width>
+            <height>48</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>48</width>
+            <height>48</height>
+           </size>
+          </property>
+          <property name="toolTip">
+           <string>Block 1 (left button - draw, right - erase)</string>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="icon">
+           <iconset resource="editor.qrc">
+            <normaloff>:/images/block1.png</normaloff>:/images/block1.png</iconset>
+          </property>
+          <property name="iconSize">
+           <size>
+            <width>40</width>
+            <height>40</height>
+           </size>
+          </property>
+          <property name="checkable">
+           <bool>true</bool>
+          </property>
+          <property name="autoExclusive">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="2">
+         <widget class="QToolButton" name="tbBlock2">
+          <property name="minimumSize">
+           <size>
+            <width>48</width>
+            <height>48</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>48</width>
+            <height>48</height>
+           </size>
+          </property>
+          <property name="toolTip">
+           <string>Block 2 (left button - draw, right - erase)</string>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="icon">
+           <iconset resource="editor.qrc">
+            <normaloff>:/images/block2.png</normaloff>:/images/block2.png</iconset>
+          </property>
+          <property name="iconSize">
+           <size>
+            <width>40</width>
+            <height>40</height>
+           </size>
+          </property>
+          <property name="checkable">
+           <bool>true</bool>
+          </property>
+          <property name="autoExclusive">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+  </widget>
+  <action name="action_Open">
+   <property name="text">
+    <string>&amp;Open...</string>
+   </property>
+  </action>
+  <action name="action_Save">
+   <property name="text">
+    <string>&amp;Save</string>
+   </property>
+  </action>
+  <action name="actionSave_as">
+   <property name="text">
+    <string>Save as...</string>
+   </property>
+  </action>
+  <action name="actionE_xit">
+   <property name="text">
+    <string>E&amp;xit</string>
+   </property>
+  </action>
+  <action name="actionSettings">
+   <property name="text">
+    <string>Settings...</string>
+   </property>
+  </action>
+  <action name="actionShow_properties">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Show properties</string>
+   </property>
+  </action>
+  <action name="actionNew">
+   <property name="text">
+    <string>New</string>
+   </property>
+  </action>
+  <action name="actionCreate_levelpack">
+   <property name="text">
+    <string>Create levelpack...</string>
+   </property>
+  </action>
+  <action name="actionExtract_levelpack">
+   <property name="text">
+    <string>Extract levelpack...</string>
+   </property>
+  </action>
+  <action name="actionAbout">
+   <property name="text">
+    <string>About</string>
+   </property>
+  </action>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <customwidgets>
+  <customwidget>
+   <class>LevelWidget</class>
+   <extends>QTableWidget</extends>
+   <header>levelwidget.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources>
+  <include location="editor.qrc"/>
+ </resources>
+ <connections/>
+</ui>
