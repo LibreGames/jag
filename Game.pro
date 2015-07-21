@@ -2,7 +2,9 @@
 # Project created by QtCreator 2009-05-07T18:37:02
 # -------------------------------------------------
 QT += xml \
-    opengl
+    opengl \
+    x11extras
+
 unix: {
     TARGET = ./bin/jag
     target.path = /usr/games/
