@@ -20,8 +20,8 @@ JAG was created using only free development software and free resources.
 ----------------------------------------------------------------------------------
 SUPPORTED PLATFORMS
 
-Since JAG is based on Qt5/SDL frameworks, all the platforms supported by them
-should be able to build and launch the game.
+Since JAG is based on Qt5 (or Qt4) and SDL frameworks, all the platforms
+supported by them should be able to build and launch the game.
 
 In particular:
 - MS Windows 7, Vista, XP
@@ -33,7 +33,7 @@ INSTALLATION
 
 Installation manual can be found here: http://jag.xlabsoft.com/install.php
 
-Note that the version in this repo is meant to be built with Qt 5.
+Note that the version in this repo can also be built with Qt 5.
 It requires the following Qt5 components:
  - Qt5 OpenGL
  - Qt5 X11Extras
@@ -49,7 +49,7 @@ http://jag.xlabsoft.com
 ---------------------------------------------------------------------------------
 CHANGELOG
 
-- update build system for Qt 5
+- add conditional support for Qt 5
 
 0.3.2
 

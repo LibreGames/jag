@@ -2,8 +2,11 @@
 # Project created by QtCreator 2009-05-07T18:37:02
 # -------------------------------------------------
 QT += xml \
-    opengl \
-    x11extras
+    opengl
+
+equals(QT_MAJOR_VERSION, 5) {
+    QT += x11extras
+}
 
 unix: {
     TARGET = ./bin/jag
