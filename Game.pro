@@ -2,12 +2,14 @@
 # Project created by QtCreator 2009-05-07T18:37:02
 # -------------------------------------------------
 QT += xml \
-    opengl
+    opengl \
+    x11extras
+
 unix: {
     TARGET = ./bin/jag
-    target.path = /usr/local/bin/
+    target.path = /usr/games/
     INSTALLS += target
-    datas.path = /usr/local/games/jag
+    datas.path = /usr/share/games/jag
     datas.files = data
     INSTALLS += datas
     LIBS += -lXrandr
@@ -22,7 +24,7 @@ win32: {
         -lSDL.dll
     RC_FILE = res.rc
 }
-LIBS += -lSDLmain \
+LIBS += -lX11 \
     -lSDL \
     -lSDL_mixer
 TEMPLATE = app
