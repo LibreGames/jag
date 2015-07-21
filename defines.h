@@ -1,7 +1,7 @@
 #ifndef DEFINES_H
 #define DEFINES_H
 
-#include <QtCore>
+#include <QString>
 
 const quint32 NoPlace         = 0;
 const quint32 PlaceConcrete   = ((quint32)1) << 0;
@@ -21,6 +21,8 @@ const quint32 ItemAppear      = ((quint32)1) << 6;
 
 const quint32 Processed       = ((quint32)1) << 15;
 
+
+const QString GameName        = "JAG";
 
 const int MAX_ITEMS_COUNT     = 6;
 

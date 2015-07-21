@@ -1,7 +1,9 @@
 #ifndef GAMETOOLS_H
 #define GAMETOOLS_H
 
-#include <QtGui>
+#include <QString>
+#include <QPoint>
+#include <QPainter>
 
 class GameScene;
 class ToolSet;

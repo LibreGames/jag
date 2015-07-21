@@ -1,8 +1,8 @@
 JAG: Freeware crossplatform 2D arcade-puzzle game
 
-version 0.3.1
+version 0.3.2
 
-XlabSoft & Industrial Infosystems 2009-2010
+XlabSoft & Industrial Infosystems 2009-2012
 
 ----------------------------------------------------------------------------------
 LICENSE
@@ -42,6 +42,21 @@ http://jag.xlabsoft.com
 
 ---------------------------------------------------------------------------------
 CHANGELOG
+
+0.3.2
+
+- added Italian translation (thanks to Franco Rebora)
+- added Dutch translation (thanks to Bart Van Loy)
+- added French translation (thanks to Tutur)
+
+- added "Learning ABC" level pack (thanks to APC aka Andrey Pohilko, http://apc.kg)
+
+- improvements:
+	- extended display settings (multi monitor recognition)
+	- dynamic help loading
+	- added menu icons
+	- compiled with Qt 4.7.2
+
 
 0.3.1
 

@@ -6,6 +6,8 @@
 #include "gameprofile.h"
 #include "gamestat.h"
 
+#include <QGraphicsSceneMouseEvent>
+
 ////////////////////////////////////////////////////////////////////////////////
 
 void GameScene::keyPressEvent ( QKeyEvent * keyEvent )
@@ -94,7 +96,7 @@ void GameScene::keyPressEvent ( QKeyEvent * keyEvent )
 
 ////////////////////////////////////////////////////////////////////////////////
 
-void GameScene::mousePressEvent ( QGraphicsSceneMouseEvent *mouseEvent )
+void GameScene::mousePressEvent(QGraphicsSceneMouseEvent *mouseEvent)
 {
   QGraphicsScene::mousePressEvent(mouseEvent);
   if (mouseEvent->isAccepted())

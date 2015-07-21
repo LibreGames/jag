@@ -1,7 +1,9 @@
 #ifndef GAMEMENU_H
 #define GAMEMENU_H
 
-#include <QtGui>
+#include <QDialog>
+#include <QPixmap>
+
 #include "gamescene.h"
 #include "ui_menu.h"
 
@@ -90,6 +92,7 @@ private slots:
     void on_bPauseAbandon_clicked();
     void on_bPauseBack_clicked();
 
+    void on_pbRefreshGraphicModes_clicked();
     void on_bGraphicsOk_clicked();
     void on_bGraphicsBack_clicked();
 
@@ -103,6 +106,7 @@ private slots:
     void on_rbPuzzle_toggled(bool);
     void on_sliDifficulty_valueChanged(int);
     void on_bGameStart_clicked();
+    void on_bGameBack_clicked();
 
     void on_bProfileSelect_clicked();
     void on_bProfileRename_clicked();

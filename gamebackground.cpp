@@ -2,7 +2,9 @@
 #include "gamewidget.h"
 #include "gameprofile.h"
 
-GameBackground * gameBackground = 0;
+#include <QDir>
+
+GameBackground *gameBackground = 0;
 
 enum BgBlend { BB_NONE, BB_ALPHA, BB_BLOCKS };
 

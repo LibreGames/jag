@@ -1,5 +1,5 @@
 <RCC>
-    <qresource prefix="/" >
+    <qresource prefix="/">
         <file>images/cursor_wand.png</file>
         <file>images/logo.png</file>
         <file>images/target2.png</file>
@@ -17,8 +17,27 @@
         <file>images/score.png</file>
         <file>style/style.css</file>
         <file>style/style_vista.css</file>
-        <file>help/index.htm</file>
-        <file>help/index_ru.htm</file>
+        <file>images/icons/add_user.png</file>
+        <file>images/icons/assistant.png</file>
+        <file>images/icons/back.png</file>
+        <file>images/icons/button_cancel.png</file>
+        <file>images/icons/button_ok.png</file>
+        <file>images/icons/configure.png</file>
+        <file>images/icons/display.png</file>
+        <file>images/icons/finish.png</file>
+        <file>images/icons/forward.png</file>
+        <file>images/icons/games.png</file>
+        <file>images/icons/lamp.png</file>
+        <file>images/icons/language.png</file>
+        <file>images/icons/mycomputer.png</file>
+        <file>images/icons/pack.png</file>
+        <file>images/icons/redo.png</file>
+        <file>images/icons/reload.png</file>
+        <file>images/icons/remove.png</file>
+        <file>images/icons/sound.png</file>
+        <file>images/icons/speech.png</file>
+        <file>images/icons/users.png</file>
+        <file>images/icons/users2.png</file>
         <file>images/bg_menu.jpg</file>
     </qresource>
 </RCC>

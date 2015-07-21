@@ -1,7 +1,9 @@
 #ifndef SCENE_IF_H
 #define SCENE_IF_H
 
-#include <QtGui>
+#include <QList>
+#include <QPainter>
+#include <QCursor>
 
 #include "gameitem.h"
 #include "scaler.h"

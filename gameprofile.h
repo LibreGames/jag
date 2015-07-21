@@ -1,7 +1,8 @@
 #ifndef GAMEPROFILE_H
 #define GAMEPROFILE_H
 
-#include <QtGui>
+#include <QStringList>
+#include <QObject>
 #include <QXmlStreamReader>
 
 #define DIFF_LOW    1
@@ -52,7 +53,7 @@ struct PlayerInfo
         m_fullscreen(false),
         m_width(0), m_height(0),
         musicEnabled(false), soundVolume(64), musicVolume(64),
-        x(0), y(0)
+        x(0), y(0), screen(0)
         { addLevelPack("default"); }
 
     LevelPackInfo* currentLevelPackInfo();
@@ -71,7 +72,7 @@ struct PlayerInfo
 
     bool musicEnabled;
     int soundVolume, musicVolume;
-    int x, y;
+    int x, y, screen;
 
     QList<LevelPackInfo*> levelpacks;
 };
@@ -141,6 +142,7 @@ public:
     inline void setVideoMode(int w, int h)     { currentPlayer()->m_width = w; currentPlayer()->m_height = h; }
 
     inline void setWindowPos(int xx, int yy) { currentPlayer()->x = xx; currentPlayer()->y = yy; }
+    inline void setScreen(int screen) { currentPlayer()->screen = screen; }
 
 //    void addTopTenPlayer(PlayerScore ps);
 //  QList<PlayerScore> topTenList()      { return m_topten; }

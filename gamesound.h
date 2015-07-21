@@ -1,7 +1,8 @@
 #ifndef GAMESOUND_H
 #define GAMESOUND_H
 
-#include <QtGui>
+#include <QList>
+#include <QTimer>
 
 #ifdef Q_OS_WIN32
 #include "SDL.h"

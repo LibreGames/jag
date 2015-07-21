@@ -20,7 +20,9 @@
 
 #include "consttools.h"
 
-ToolSet * toolset = 0;
+#include <QApplication>
+
+ToolSet *toolset = 0;
 
 ////////////////////////////////////////////////////////////////////////////////
 

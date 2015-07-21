@@ -1,6 +1,8 @@
 #include "gameprofile.h"
+
 #include <QXmlStreamWriter>
 #include <QXmlStreamReader>
+#include <QFile>
 
 void GameProfile::saveXml()
 {
@@ -10,6 +12,8 @@ void GameProfile::saveXml()
 
     QXmlStreamWriter xsw;
     xsw.setDevice(&f);
+
+    xsw.setAutoFormatting(true);
 
     xsw.writeStartDocument();
     xsw.writeDTD("<!DOCTYPE jagprofile>");
@@ -37,12 +41,11 @@ void GameProfile::saveXml()
         xsw.writeTextElement("musicVolume", QString("%1").arg(pl->musicVolume));
         xsw.writeTextElement("musicEnabled", QString("%1").arg(pl->musicEnabled));
 
-        // save window position only in window mode
-        if (!pl->m_fullscreen)
-        {
-          xsw.writeTextElement("posx", QString("%1").arg(pl->x));
-          xsw.writeTextElement("posy", QString("%1").arg(pl->y));
-        }
+        // save window position
+        xsw.writeTextElement("posx", QString("%1").arg(pl->x));
+        xsw.writeTextElement("posy", QString("%1").arg(pl->y));
+        // save screen number
+        xsw.writeTextElement("screen", QString("%1").arg(pl->screen));
 
         // level packs
         for (int j = 0; j < pl->levelpacks.count(); j++) {
@@ -169,6 +172,8 @@ void GameProfile::readXmlPlayer(QXmlStreamReader &xsr)
                 pl->x = xsr.readElementText().toInt();
             else if (xsr.name() == "posy")
                 pl->y = xsr.readElementText().toInt();
+            else if (xsr.name() == "screent")
+                pl->screen = xsr.readElementText().toInt();
             else if (xsr.name() == "levelpack")
                 readXmlLevelPack(xsr, pl);
             else

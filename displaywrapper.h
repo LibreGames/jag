@@ -1,7 +1,9 @@
 #ifndef DISPLAYWRAPPER_H
 #define DISPLAYWRAPPER_H
 
-#include <QtGui>
+#include <QStringList>
+#include <QWidget>
+#include <QTextStream>
 
 #ifdef Q_OS_WIN32
 #include <Windows.h>
@@ -36,6 +38,8 @@ public:
 
   static VideoModeInfo currentVideoMode() { return dwrapper.dw_currentMode(); }
 
+  static void setBaseWidget(QWidget *widget) { dwrapper.base_widget = widget; }
+
 private:
   bool dw_switchMode(int w, int h, int bpp, bool fs);
   void dw_restoreMode();
@@ -51,6 +55,7 @@ private:
 
   static DisplayWrapper dwrapper;
 
+  QWidget *base_widget;
   int base_width, base_height, base_bpp;
 
   QStringList modeNames;

@@ -3,7 +3,9 @@
 
 #include "scaler.h"
 
-GameStock * gameStock = 0;
+#include <QFontMetrics>
+
+GameStock *gameStock = 0;
 
 GameStock::GameStock()
 {

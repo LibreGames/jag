@@ -1,6 +1,8 @@
 #include "gamesound.h"
 #include "gamewidget.h"
 
+#include <QDebug>
+
 GameSound* sndEngine = 0;
 
 GameSound::GameSound()

@@ -1,8 +1,15 @@
 #ifndef GAMESCENE_H
 #define GAMESCENE_H
 
-#include <QtGui>
-#include <QtOpenGL>
+#include <QDebug>
+
+#include <QGraphicsScene>
+#include <QGLWidget>
+#include <QDesktopWidget>
+#include <QSet>
+#include <QTime>
+#include <QCloseEvent>
+#include <QDir>
 
 #include "defines.h"
 #include "gameitem.h"
@@ -37,9 +44,9 @@ public:
     inline MenuWidget* gameMenu() const { return menu; }
 
     // internals
-    void mouseMoveEvent( QGraphicsSceneMouseEvent *event );
-    void mousePressEvent( QGraphicsSceneMouseEvent *event );
-    void keyPressEvent ( QKeyEvent * keyEvent );
+    void mouseMoveEvent(QGraphicsSceneMouseEvent *event);
+    void mousePressEvent(QGraphicsSceneMouseEvent *event);
+    void keyPressEvent (QKeyEvent *keyEvent );
 
     // timers
     void disableTimersButAdvance();

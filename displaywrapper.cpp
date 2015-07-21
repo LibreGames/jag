@@ -1,10 +1,14 @@
 #include "displaywrapper.h"
 
+#include <QDesktopWidget>
+#include <QFile>
+#include <QProcess>
+
 DisplayWrapper DisplayWrapper::dwrapper;
 
 #ifdef Q_OS_WIN32
 
-DisplayWrapper::DisplayWrapper()
+DisplayWrapper::DisplayWrapper() : base_widget(0)
 {
 }
 
@@ -21,7 +25,30 @@ void DisplayWrapper::dw_init(bool filter, int minWidth, int minHeight)
   DWORD modenum = 0;
   VideoModeInfo mode;
 
-  while (EnumDisplaySettings(NULL, modenum, &devmode))
+  modes.clear();
+  modeNames.clear();
+
+  // get current display
+  wchar_t *device = NULL;
+  DISPLAY_DEVICE display_device;
+  display_device.cb = sizeof(DISPLAY_DEVICE);
+
+  if (base_widget)
+  {
+    QDesktopWidget desktop;
+    int screen = desktop.screenNumber(base_widget);
+    if (screen >= 0)
+    {
+      if (EnumDisplayDevices(NULL, screen, &display_device, 0))
+      {
+        device = display_device.DeviceName;
+        //qDebug() << QString::fromWCharArray(device);
+      }
+    }
+  }
+
+  // enumerate display modes
+  while (EnumDisplaySettings(device, modenum, &devmode))
   {
     if (devmode.dmPelsWidth >= minWidth && devmode.dmPelsHeight >= minHeight)
     {

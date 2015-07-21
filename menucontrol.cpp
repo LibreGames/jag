@@ -4,6 +4,12 @@
 #include "gamesound.h"
 #include "gamewidget.h"
 
+#include "displaywrapper.h"
+
+#include <QSettings>
+#include <QMessageBox>
+#include <QInputDialog>
+
 void MenuWidget::keyPressEvent(QKeyEvent *keyEvent)
 {
     if (isActive()) {
@@ -111,6 +117,9 @@ void MenuWidget::on_bOptGraphics_clicked()
         ui.lwThemes->setCurrentItem(found.at(0));
     else
         ui.lwThemes->setCurrentRow(0);
+
+    // update video modes
+    on_pbRefreshGraphicModes_clicked();
 
     // set video mode
     ui.cbFullscreenMode->setChecked(gameProfile->isFullscreen());
@@ -242,6 +251,16 @@ void MenuWidget::on_bPauseBack_clicked()
     emit menuPauseBack();
 }
 
+void MenuWidget::on_pbRefreshGraphicModes_clicked()
+{
+  // get new modes
+  DisplayWrapper::init();
+
+  // load video modes
+  ui.lwVideoMode->clear();
+  ui.lwVideoMode->addItems(DisplayWrapper::listModes());
+}
+
 void MenuWidget::on_bGraphicsOk_clicked()
 {
     // apply options
@@ -280,7 +299,7 @@ void MenuWidget::on_bGraphicsOk_clicked()
 
 void MenuWidget::on_bGraphicsBack_clicked()
 {
-    setCurrentIndex(gameProfile->isGameStarted() ? MENU_PAUSE : MENU_OPTIONS);
+  setCurrentIndex(gameProfile->isGameStarted() ? MENU_PAUSE : MENU_OPTIONS);
 }
 
 void MenuWidget::on_bAudioBack_clicked()
@@ -354,6 +373,11 @@ void MenuWidget::on_bGameStart_clicked()
     lpi->diff = ui.sliDifficulty->value();
 
     emit menuGameStart();
+}
+
+void MenuWidget::on_bGameBack_clicked()
+{
+  setCurrentIndex(MENU_MAIN);
 }
 
 void MenuWidget::on_bProfileSelect_clicked()
@@ -513,20 +537,14 @@ void MenuWidget::on_bLangOk_clicked()
     while (!ts.atEnd()) {
         QString qs = ts.readLine().simplified();
         QString langname = qs.section("::",0,0).simplified();
-        QString langfile = qs.section("::",1,1).simplified();
-        if (!langname.isEmpty() && langname == lang && !langfile.isEmpty()) {
+        QString langid = qs.section("::",1,1).simplified();
+        if (!langname.isEmpty() && langname == lang && !langid.isEmpty()) {
             QString curlang = settings.value("Language", "").toString();
-            if (curlang != langfile) {
-                settings.setValue("Language", langfile);
-                if (lang == "Russian")
-                    settings.setValue("Helpfile", "index_ru.htm");
-                else
-                    settings.setValue("Helpfile", "index.htm");
+            settings.setValue("Language", langid);
                 found = true;
                 break;
             }
         }
-    }
     f.close();
 
     if (!found || row == 0)

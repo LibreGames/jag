@@ -9,10 +9,16 @@
 
 #include "scaler.h"
 
-GameWidget::GameWidget(QWidget *parent)
+QString GameWidget::resourcePath;
+
+GameWidget::GameWidget(const QString &respath, QWidget *parent)
     : QGraphicsView(parent)
 {
+  resourcePath = respath;
+
   qsrand(QTime::currentTime().msec());
+
+  setWindowTitle(GameName);
 
   // create sound engine
   sndEngine = new GameSound();
@@ -43,12 +49,31 @@ GameWidget::GameWidget(QWidget *parent)
   connect(scene->gameMenu(), SIGNAL(menuVideoModeChanged()),
           this, SLOT(setVideoMode()));
 
+  // switch to the screen if possible
+  PlayerInfo *pl = gameProfile->currentPlayer();
+  //move(pl->x, pl->y);
+
+  // check if it is out of the screen?
+  QSize extra;
+  QDesktopWidget desktop;
+  for (int ff = 0; ff < desktop.screenCount(); ff++ )
+     extra += desktop.screenGeometry(ff).size();
+  if (pl->x >= extra.width())
+    pl->x = extra.width()-100;
+  if (pl->y >= extra.height())
+    pl->y = extra.height()-100;
+  if (pl->y < 0)
+    pl->y = 0;
+
+  move(pl->x, pl->y);
+
   setVideoMode();
 }
 
 GameWidget::~GameWidget()
 {
   gameProfile->setWindowPos(x(),y());
+  gameProfile->setScreen(QDesktopWidget().screenNumber(this));
   gameProfile->saveProfile();
 
   delete sndEngine;
@@ -105,6 +130,8 @@ void GameWidget::setVideoMode()
   else
   {
     PlayerInfo *pl = gameProfile->currentPlayer();
+    if (pl->y < 0)
+      pl->y = 0;
     move(pl->x, pl->y);
   }
 
@@ -121,7 +148,7 @@ void GameWidget::setVideoMode()
 
 void GameWidget::playRandomMusic()
 {
-  QStringList ext; ext << "*.mp3" << "*.wav" << "*.mod";
+  QStringList ext; ext << "*.mp3" << "*.wav" << "*.mod" << "*.mid";
   QString path(resourcePath + "/music");
   QStringList entryList = QDir(path).entryList(ext);
 //  qDebug() << entryList;

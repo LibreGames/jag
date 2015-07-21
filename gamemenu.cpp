@@ -6,6 +6,9 @@
 #include "scaler.h"
 #include "displaywrapper.h"
 
+#include <QSettings>
+
+
 MenuWidget::MenuWidget(QWidget *parent) :
     QStackedWidget(parent)
 {
@@ -38,15 +41,25 @@ MenuWidget::MenuWidget(QWidget *parent) :
 
     // load help file
     QSettings settings("xlabsoft","jag");
-    QString helpfile = ":/help/" + settings.value("Helpfile", "index.htm").toString();
+    QString lang = settings.value("Language", "").toString();
+    QString helpfile = GameWidget::getResourcePath() +
+                       "help/index";
+    if (!lang.isEmpty())
+      helpfile += "_" + lang;
+    helpfile += ".htm";
 
     QString helpstring = "";
     QFile fhelp(helpfile);
-    if (fhelp.open(QIODevice::ReadOnly)) {
-        QTextStream ts(&fhelp);
-        helpstring = ts.readAll().simplified();
-        fhelp.close();
+    if (!fhelp.open(QIODevice::ReadOnly)) {
+        helpfile = GameWidget::getResourcePath() + "help/index.htm";
+        fhelp.setFileName(helpfile);
+        fhelp.open(QIODevice::ReadOnly);
     }
+
+    QTextStream ts(&fhelp);
+    helpstring = ts.readAll().simplified();
+    fhelp.close();
+
     ui.teHelp->setHtml(helpstring);
 
     connect(this, SIGNAL(currentChanged(int)), this, SLOT(onCurrentChanged(int)));
@@ -76,9 +89,9 @@ void MenuWidget::activate(bool en)
 {
     m_active = en;
     if (en)
-        showNormal();
+      showNormal();
     else
-        hide();
+      hide();
 }
 /*
 void MenuWidget::updateHallOfFame()

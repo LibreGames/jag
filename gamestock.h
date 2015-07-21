@@ -1,10 +1,13 @@
 #ifndef GAMESTOCK_H
 #define GAMESTOCK_H
 
-#include <QtGui>
+#include <QFont>
+#include <QCursor>
+#include <QPixmap>
+#include <QList>
 
 class GameStock;
-extern GameStock * gameStock;
+extern GameStock *gameStock;
 
 class GameStock
 {

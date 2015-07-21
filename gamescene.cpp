@@ -99,6 +99,7 @@ GameScene::~GameScene()
   delete gameBackground;
 }
 
+
 void GameScene::initGame()
 {
   myLock = true;
@@ -109,6 +110,7 @@ void GameScene::initGame()
 
   myLock = false;
 }
+
 
 void GameScene::initTheme()
 {
@@ -146,6 +148,7 @@ void GameScene::initTheme()
 
   loadRandomBackground();
 }
+
 
 bool GameScene::initLevel(int level)
 {
@@ -258,6 +261,7 @@ bool GameScene::initLevel(int level)
   return true;
 }
 
+
 void GameScene::initProfile()
 {
     initTheme();
@@ -266,6 +270,7 @@ void GameScene::initProfile()
     max_level = gameProfile->levelPackCount(gameProfile->currentLevelPack());
     update();
 }
+
 
 void GameScene::initGraphics()
 {
@@ -284,8 +289,10 @@ void GameScene::initGraphics()
   gameBonus->initGraphics(this);
 
   drawConcretesOnBackground();
+
   drawHUDonBackground();
 }
+
 
 void GameScene::selectActiveItems(int items)
 {
@@ -346,6 +353,7 @@ bool GameScene::loadLevel(int index)
     }
     return false;
 }
+
 
 bool GameScene::loadScene(const QByteArray &ba)
 {
@@ -481,6 +489,7 @@ struct PlaceAvailInfo
 
 #define PLDATA(r,c) pl[(((r) << 4) + (c)) & 0xff]
 
+
 bool GameScene::checkAvailableMoves()
 {
 //  qDebug() << "checkAvailableMoves() entered...";
@@ -594,6 +603,7 @@ final:
   return result;
 }
 
+
 bool GameScene::checkAvailItemsInRow(PlaceAvailInfo *pl, int row, int from, int to)
 {
   if (from+2 > to)
@@ -621,6 +631,7 @@ bool GameScene::checkAvailItemsInRow(PlaceAvailInfo *pl, int row, int from, int 
 
   return false;
 }
+
 
 bool GameScene::checkAvailItemsInColumn(PlaceAvailInfo *pl, int col, int from, int to)
 {
@@ -650,6 +661,7 @@ bool GameScene::checkAvailItemsInColumn(PlaceAvailInfo *pl, int col, int from, i
   return false;
 }
 
+
 void GameScene::refillItems(int deep)
 {
   for (int i = 0; i < rows; i++)
@@ -678,6 +690,7 @@ void GameScene::refillItems(int deep)
               }
           }
 }
+
 
 void GameScene::hintAvailableMoves()
 {
@@ -843,22 +856,6 @@ void GameScene::removeScheduledItems()
     sndEngine->playSound(GameSound::sndItemDisappear);
 }
 
-void GameScene::advanceTempItems()
-{
-  for (int i = 0; i < tempItems.count(); i++)
-  {
-    BaseItem *item = tempItems.at(i);
-
-    if (!item->advance())
-    {
-      delete item;
-      tempItems[i] = 0;
-    }
-  }
-
-  tempItems.removeAll(0);
-}
-
 ////////////////////////////////////////////////////////////////////////////////
 
 bool GameScene::checkFallItems()
@@ -951,7 +948,6 @@ void GameScene::nextCycle()
   {
     frameCount = 5;
 
-
     // check if statistic is active
     if (stat_active)
     {
@@ -976,7 +972,6 @@ void GameScene::nextCycle()
       int old_targets = targets;
 
       bool is_fill = fillEmptyFreeRows();
-
       bool is_fall = checkFallItems();
 
       if (moveState == MS_MOVING || moveState == MS_RETURN)
@@ -1035,9 +1030,7 @@ void GameScene::nextCycle()
         bonusTimer->start();
         sndEngine->playSound(GameSound::sndTarget);
       }
-
     }
-
   }
 
 
@@ -1056,6 +1049,23 @@ void GameScene::nextCycle()
   }
 
   update();
+}
+
+
+void GameScene::advanceTempItems()
+{
+  for (int i = 0; i < tempItems.count(); i++)
+  {
+    BaseItem *item = tempItems.at(i);
+
+    if (!item->advance())
+    {
+      delete item;
+      tempItems[i] = 0;
+    }
+  }
+
+  tempItems.removeAll(0);
 }
 
 
@@ -1140,7 +1150,6 @@ void GameScene::checkMouseActions()
           return;
         }
       }
-
     }
 
     // select item
@@ -1160,6 +1169,7 @@ void GameScene::checkMouseActions()
   gameBonus->checkMouseActions(this, clickPos);
 }
 
+
 void GameScene::unsetCurrentItem()
 {
     if (currentItem)
@@ -1169,6 +1179,7 @@ void GameScene::unsetCurrentItem()
       moveState = MS_IDLE;
     }
 }
+
 
 void GameScene::executeMovement()
 {
@@ -1181,6 +1192,7 @@ void GameScene::executeMovement()
   pi1.item = currentItem;
   pi1.item->fall(targetCol-currentCol, targetRow-currentRow);
 }
+
 
 bool GameScene::checkItemMovement()
 {
@@ -1247,6 +1259,7 @@ void GameScene::countTime()
   }
 }
 
+
 void GameScene::countBonusTime()
 {
   if (--bonus_time <= 0)
@@ -1282,6 +1295,7 @@ void GameScene::levelWon()
   showStatictics((level < max_level) ? STAT_LEVEL_WON : STAT_GAME_WON);
 }
 
+
 void GameScene::levelFailed()
 {
   stopGame();
@@ -1290,6 +1304,7 @@ void GameScene::levelFailed()
 
   showStatictics(STAT_LEVEL_FAIL);
 }
+
 
 void GameScene::pauseGame()
 {
@@ -1308,6 +1323,7 @@ void GameScene::pauseGame()
   disableTimers();
 }
 
+
 void GameScene::continueGame()
 {
   QApplication::setOverrideCursor(lastCursor);
@@ -1316,6 +1332,7 @@ void GameScene::continueGame()
   enableInput();
   enableTimers();
 }
+
 
 void GameScene::stopGame()
 {
@@ -1326,6 +1343,7 @@ void GameScene::stopGame()
   disableInput();
   disableTimersButAdvance();
 }
+
 
 void GameScene::exitToMainMenu()
 {
@@ -1340,6 +1358,7 @@ void GameScene::exitToMainMenu()
   menu->showNormal();
 }
 
+
 void GameScene::runNextLevel()
 {
   stat_active = false;
@@ -1348,6 +1367,7 @@ void GameScene::runNextLevel()
   if (!initLevel(gameProfile->currentPlayer()->currentLevelPackInfo()->level))
       exitToMainMenu();
 }
+
 
 void GameScene::disableTimersButAdvance()
 {
@@ -1359,6 +1379,7 @@ void GameScene::disableTimersButAdvance()
   update();
 }
 
+
 void GameScene::disableTimers()
 {
   timeTimer->stop();
@@ -1368,6 +1389,7 @@ void GameScene::disableTimers()
 
   update();
 }
+
 
 void GameScene::enableTimers()
 {
@@ -1391,6 +1413,7 @@ void GameScene::wait(int ms)
     QApplication::processEvents();
   }
 }
+
 
 void GameScene::loadRandomBackground()
 {

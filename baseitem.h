@@ -1,7 +1,8 @@
 #ifndef BASEITEM_H
 #define BASEITEM_H
 
-#include <QtGui>
+#include <QPainter>
+#include <QString>
 
 ////////////////////////////////////////////////////////////////////////////////
 

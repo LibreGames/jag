@@ -1,7 +1,8 @@
 #ifndef GAMEBONUS_H
 #define GAMEBONUS_H
 
-#include <QtGui>
+#include <QPixmap>
+#include <QString>
 
 
 #define BONUS_FOR_SECOND  2

@@ -6,6 +6,8 @@
 #include "gamebonus.h"
 #include "gametools.h"
 
+#include <QApplication>
+
 IScene::IScene() :
     time(0),
     bonus(0), bonus_time(0),

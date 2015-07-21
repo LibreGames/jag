@@ -26,11 +26,11 @@
    <string/>
   </property>
   <property name="currentIndex">
-   <number>6</number>
+   <number>0</number>
   </property>
   <widget class="QWidget" name="page">
    <layout class="QGridLayout">
-    <item row="0" column="0">
+    <item row="1" column="0">
      <widget class="QPushButton" name="bNew">
       <property name="sizePolicy">
        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
@@ -53,9 +53,19 @@
       <property name="text">
        <string>New Game</string>
       </property>
+      <property name="icon">
+       <iconset resource="resources.qrc">
+        <normaloff>:/images/icons/games.png</normaloff>:/images/icons/games.png</iconset>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>32</width>
+        <height>32</height>
+       </size>
+      </property>
      </widget>
     </item>
-    <item row="1" column="0">
+    <item row="2" column="0">
      <widget class="QPushButton" name="bContinue">
       <property name="sizePolicy">
        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
@@ -78,9 +88,19 @@
       <property name="text">
        <string>Continue Game</string>
       </property>
+      <property name="icon">
+       <iconset resource="resources.qrc">
+        <normaloff>:/images/icons/forward.png</normaloff>:/images/icons/forward.png</iconset>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>32</width>
+        <height>32</height>
+       </size>
+      </property>
      </widget>
     </item>
-    <item row="2" column="0">
+    <item row="3" column="0">
      <widget class="QPushButton" name="bOptions">
       <property name="sizePolicy">
        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
@@ -103,9 +123,19 @@
       <property name="text">
        <string>Options</string>
       </property>
+      <property name="icon">
+       <iconset resource="resources.qrc">
+        <normaloff>:/images/icons/configure.png</normaloff>:/images/icons/configure.png</iconset>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>32</width>
+        <height>32</height>
+       </size>
+      </property>
      </widget>
     </item>
-    <item row="3" column="0">
+    <item row="4" column="0">
      <widget class="QPushButton" name="bHelp">
       <property name="sizePolicy">
        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
@@ -128,9 +158,19 @@
       <property name="text">
        <string>Help</string>
       </property>
+      <property name="icon">
+       <iconset resource="resources.qrc">
+        <normaloff>:/images/icons/assistant.png</normaloff>:/images/icons/assistant.png</iconset>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>32</width>
+        <height>32</height>
+       </size>
+      </property>
      </widget>
     </item>
-    <item row="4" column="0">
+    <item row="5" column="0">
      <widget class="QPushButton" name="bCredits">
       <property name="sizePolicy">
        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
@@ -153,9 +193,19 @@
       <property name="text">
        <string>Credits</string>
       </property>
+      <property name="icon">
+       <iconset resource="resources.qrc">
+        <normaloff>:/images/icons/users2.png</normaloff>:/images/icons/users2.png</iconset>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>32</width>
+        <height>32</height>
+       </size>
+      </property>
      </widget>
     </item>
-    <item row="6" column="0">
+    <item row="7" column="0">
      <widget class="QPushButton" name="bExit">
       <property name="sizePolicy">
        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
@@ -166,7 +216,7 @@
       <property name="maximumSize">
        <size>
         <width>16777215</width>
-        <height>65</height>
+        <height>48</height>
        </size>
       </property>
       <property name="cursor">
@@ -178,12 +228,32 @@
       <property name="text">
        <string>Exit</string>
       </property>
+      <property name="icon">
+       <iconset resource="resources.qrc">
+        <normaloff>:/images/icons/remove.png</normaloff>:/images/icons/remove.png</iconset>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>32</width>
+        <height>32</height>
+       </size>
+      </property>
      </widget>
     </item>
-    <item row="5" column="0">
+    <item row="6" column="0">
      <widget class="Line" name="line_2">
       <property name="orientation">
        <enum>Qt::Horizontal</enum>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="0">
+     <widget class="QLabel" name="label_10">
+      <property name="text">
+       <string>JAG Menu</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
       </property>
      </widget>
     </item>
@@ -224,6 +294,16 @@
       <property name="text">
        <string>Graphics</string>
       </property>
+      <property name="icon">
+       <iconset resource="resources.qrc">
+        <normaloff>:/images/icons/display.png</normaloff>:/images/icons/display.png</iconset>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>32</width>
+        <height>32</height>
+       </size>
+      </property>
      </widget>
     </item>
     <item row="2" column="0">
@@ -248,6 +328,16 @@
       </property>
       <property name="text">
        <string>Sound</string>
+      </property>
+      <property name="icon">
+       <iconset resource="resources.qrc">
+        <normaloff>:/images/icons/sound.png</normaloff>:/images/icons/sound.png</iconset>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>32</width>
+        <height>32</height>
+       </size>
       </property>
      </widget>
     </item>
@@ -274,6 +364,16 @@
       <property name="text">
        <string>Profile</string>
       </property>
+      <property name="icon">
+       <iconset resource="resources.qrc">
+        <normaloff>:/images/icons/users.png</normaloff>:/images/icons/users.png</iconset>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>32</width>
+        <height>32</height>
+       </size>
+      </property>
      </widget>
     </item>
     <item row="4" column="0">
@@ -298,6 +398,16 @@
       </property>
       <property name="text">
        <string>Level packs</string>
+      </property>
+      <property name="icon">
+       <iconset resource="resources.qrc">
+        <normaloff>:/images/icons/pack.png</normaloff>:/images/icons/pack.png</iconset>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>32</width>
+        <height>32</height>
+       </size>
       </property>
      </widget>
     </item>
@@ -324,6 +434,16 @@
       <property name="text">
        <string>Language</string>
       </property>
+      <property name="icon">
+       <iconset resource="resources.qrc">
+        <normaloff>:/images/icons/language.png</normaloff>:/images/icons/language.png</iconset>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>32</width>
+        <height>32</height>
+       </size>
+      </property>
      </widget>
     </item>
     <item row="7" column="0">
@@ -337,7 +457,7 @@
       <property name="maximumSize">
        <size>
         <width>16777215</width>
-        <height>65</height>
+        <height>48</height>
        </size>
       </property>
       <property name="cursor">
@@ -392,6 +512,16 @@
       <property name="text">
        <string>Graphics</string>
       </property>
+      <property name="icon">
+       <iconset resource="resources.qrc">
+        <normaloff>:/images/icons/display.png</normaloff>:/images/icons/display.png</iconset>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>32</width>
+        <height>32</height>
+       </size>
+      </property>
      </widget>
     </item>
     <item row="2" column="0">
@@ -413,6 +543,16 @@
       </property>
       <property name="text">
        <string>Sound</string>
+      </property>
+      <property name="icon">
+       <iconset resource="resources.qrc">
+        <normaloff>:/images/icons/sound.png</normaloff>:/images/icons/sound.png</iconset>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>32</width>
+        <height>32</height>
+       </size>
       </property>
      </widget>
     </item>
@@ -436,6 +576,16 @@
       <property name="text">
        <string>Restart level</string>
       </property>
+      <property name="icon">
+       <iconset resource="resources.qrc">
+        <normaloff>:/images/icons/reload.png</normaloff>:/images/icons/reload.png</iconset>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>32</width>
+        <height>32</height>
+       </size>
+      </property>
      </widget>
     </item>
     <item row="4" column="0">
@@ -457,6 +607,16 @@
       </property>
       <property name="text">
        <string>Abandon game</string>
+      </property>
+      <property name="icon">
+       <iconset resource="resources.qrc">
+        <normaloff>:/images/icons/button_cancel.png</normaloff>:/images/icons/button_cancel.png</iconset>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>32</width>
+        <height>32</height>
+       </size>
       </property>
      </widget>
     </item>
@@ -484,7 +644,7 @@
       <property name="maximumSize">
        <size>
         <width>16777215</width>
-        <height>65</height>
+        <height>48</height>
        </size>
       </property>
       <property name="cursor">
@@ -492,6 +652,16 @@
       </property>
       <property name="text">
        <string>Back to game</string>
+      </property>
+      <property name="icon">
+       <iconset resource="resources.qrc">
+        <normaloff>:/images/icons/games.png</normaloff>:/images/icons/games.png</iconset>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>32</width>
+        <height>32</height>
+       </size>
       </property>
      </widget>
     </item>
@@ -540,7 +710,7 @@
         <property name="maximumSize">
          <size>
           <width>16777215</width>
-          <height>65</height>
+          <height>48</height>
          </size>
         </property>
         <property name="cursor">
@@ -548,6 +718,12 @@
         </property>
         <property name="text">
          <string>Back</string>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>32</width>
+          <height>32</height>
+         </size>
         </property>
        </widget>
       </item>
@@ -568,7 +744,7 @@
         <property name="maximumSize">
          <size>
           <width>16777215</width>
-          <height>65</height>
+          <height>48</height>
          </size>
         </property>
         <property name="cursor">
@@ -576,6 +752,16 @@
         </property>
         <property name="text">
          <string>Ok</string>
+        </property>
+        <property name="icon">
+         <iconset resource="resources.qrc">
+          <normaloff>:/images/icons/button_ok.png</normaloff>:/images/icons/button_ok.png</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>32</width>
+          <height>32</height>
+         </size>
         </property>
        </widget>
       </item>
@@ -619,18 +805,33 @@
         </widget>
        </item>
        <item>
-        <widget class="QCheckBox" name="cbFullscreenMode">
-         <property name="text">
-          <string>Full Screen</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QCheckBox" name="cbAccel">
-         <property name="text">
-          <string>Enable Acceleration (restart needed)</string>
-         </property>
-        </widget>
+        <layout class="QGridLayout" name="gridLayout_5">
+         <item row="0" column="0">
+          <widget class="QCheckBox" name="cbFullscreenMode">
+           <property name="text">
+            <string>Full Screen</string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="1" rowspan="2">
+          <widget class="QPushButton" name="pbRefreshGraphicModes">
+           <property name="text">
+            <string>Refresh</string>
+           </property>
+           <property name="icon">
+            <iconset resource="resources.qrc">
+             <normaloff>:/images/icons/reload.png</normaloff>:/images/icons/reload.png</iconset>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="0">
+          <widget class="QCheckBox" name="cbAccel">
+           <property name="text">
+            <string>Enable Acceleration (restart needed)</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
        </item>
       </layout>
      </widget>
@@ -771,7 +972,7 @@
         <property name="maximumSize">
          <size>
           <width>16777215</width>
-          <height>65</height>
+          <height>48</height>
          </size>
         </property>
         <property name="cursor">
@@ -787,8 +988,8 @@
    </layout>
   </widget>
   <widget class="QWidget" name="page_5">
-   <layout class="QGridLayout" name="gridLayout_3">
-    <item row="0" column="0">
+   <layout class="QVBoxLayout" name="verticalLayout_3">
+    <item>
      <widget class="QLabel" name="label_7">
       <property name="text">
        <string>New game options</string>
@@ -798,12 +999,12 @@
       </property>
      </widget>
     </item>
-    <item row="1" column="0">
+    <item>
      <widget class="QGroupBox" name="groupBox_5">
       <property name="title">
        <string>Game mode</string>
       </property>
-      <layout class="QGridLayout" name="gridLayout">
+      <layout class="QGridLayout" name="gridLayout_3">
        <item row="0" column="0">
         <widget class="QRadioButton" name="rbArcade">
          <property name="text">
@@ -824,7 +1025,7 @@
       </layout>
      </widget>
     </item>
-    <item row="2" column="0">
+    <item>
      <widget class="QGroupBox" name="groupBox_6">
       <property name="title">
        <string>Difficulty</string>
@@ -862,7 +1063,7 @@
       </layout>
      </widget>
     </item>
-    <item row="3" column="0">
+    <item>
      <spacer name="verticalSpacer_2">
       <property name="orientation">
        <enum>Qt::Vertical</enum>
@@ -875,33 +1076,78 @@
       </property>
      </spacer>
     </item>
-    <item row="4" column="0">
-     <widget class="QPushButton" name="bGameStart">
-      <property name="sizePolicy">
-       <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
-        <horstretch>0</horstretch>
-        <verstretch>0</verstretch>
-       </sizepolicy>
-      </property>
-      <property name="minimumSize">
-       <size>
-        <width>0</width>
-        <height>48</height>
-       </size>
-      </property>
-      <property name="maximumSize">
-       <size>
-        <width>16777215</width>
-        <height>65</height>
-       </size>
-      </property>
-      <property name="cursor">
-       <cursorShape>PointingHandCursor</cursorShape>
-      </property>
-      <property name="text">
-       <string>Start new game</string>
-      </property>
-     </widget>
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout_5">
+      <item>
+       <widget class="QPushButton" name="bGameBack">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>48</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>16777215</width>
+          <height>48</height>
+         </size>
+        </property>
+        <property name="cursor">
+         <cursorShape>PointingHandCursor</cursorShape>
+        </property>
+        <property name="text">
+         <string>Back</string>
+        </property>
+        <property name="shortcut">
+         <string>Esc</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="bGameStart">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>48</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>16777215</width>
+          <height>48</height>
+         </size>
+        </property>
+        <property name="cursor">
+         <cursorShape>PointingHandCursor</cursorShape>
+        </property>
+        <property name="text">
+         <string>Start new game</string>
+        </property>
+        <property name="icon">
+         <iconset resource="resources.qrc">
+          <normaloff>:/images/icons/forward.png</normaloff>:/images/icons/forward.png</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>32</width>
+          <height>32</height>
+         </size>
+        </property>
+       </widget>
+      </item>
+     </layout>
     </item>
    </layout>
   </widget>
@@ -928,6 +1174,18 @@
        </item>
        <item row="1" column="0">
         <widget class="QPushButton" name="bProfileSelect">
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>32</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>16777215</width>
+           <height>32</height>
+          </size>
+         </property>
          <property name="cursor">
           <cursorShape>PointingHandCursor</cursorShape>
          </property>
@@ -938,6 +1196,18 @@
        </item>
        <item row="1" column="1">
         <widget class="QPushButton" name="bProfileRename">
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>32</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>16777215</width>
+           <height>32</height>
+          </size>
+         </property>
          <property name="cursor">
           <cursorShape>PointingHandCursor</cursorShape>
          </property>
@@ -948,6 +1218,18 @@
        </item>
        <item row="1" column="2">
         <widget class="QPushButton" name="bProfileDelete">
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>32</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>16777215</width>
+           <height>32</height>
+          </size>
+         </property>
          <property name="cursor">
           <cursorShape>PointingHandCursor</cursorShape>
          </property>
@@ -976,7 +1258,7 @@
       <property name="maximumSize">
        <size>
         <width>16777215</width>
-        <height>65</height>
+        <height>48</height>
        </size>
       </property>
       <property name="cursor">
@@ -1065,7 +1347,7 @@
       <property name="maximumSize">
        <size>
         <width>16777215</width>
-        <height>65</height>
+        <height>48</height>
        </size>
       </property>
       <property name="cursor">
@@ -1144,7 +1426,7 @@ p, li { white-space: pre-wrap; }
       <property name="maximumSize">
        <size>
         <width>16777215</width>
-        <height>65</height>
+        <height>48</height>
        </size>
       </property>
       <property name="cursor">
@@ -1200,7 +1482,7 @@ p, li { white-space: pre-wrap; }
         <property name="maximumSize">
          <size>
           <width>16777215</width>
-          <height>65</height>
+          <height>48</height>
          </size>
         </property>
         <property name="cursor">
@@ -1228,7 +1510,7 @@ p, li { white-space: pre-wrap; }
         <property name="maximumSize">
          <size>
           <width>16777215</width>
-          <height>65</height>
+          <height>48</height>
          </size>
         </property>
         <property name="cursor">
@@ -1236,6 +1518,16 @@ p, li { white-space: pre-wrap; }
         </property>
         <property name="text">
          <string>Ok</string>
+        </property>
+        <property name="icon">
+         <iconset resource="resources.qrc">
+          <normaloff>:/images/icons/button_ok.png</normaloff>:/images/icons/button_ok.png</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>32</width>
+          <height>32</height>
+         </size>
         </property>
        </widget>
       </item>
@@ -1292,7 +1584,7 @@ p, li { white-space: pre-wrap; }
       <property name="maximumSize">
        <size>
         <width>16777215</width>
-        <height>65</height>
+        <height>48</height>
        </size>
       </property>
       <property name="cursor">
@@ -1339,7 +1631,7 @@ p, li { white-space: pre-wrap; }
         <property name="maximumSize">
          <size>
           <width>16777215</width>
-          <height>65</height>
+          <height>48</height>
          </size>
         </property>
         <property name="cursor">
@@ -1367,7 +1659,7 @@ p, li { white-space: pre-wrap; }
         <property name="maximumSize">
          <size>
           <width>16777215</width>
-          <height>65</height>
+          <height>48</height>
          </size>
         </property>
         <property name="cursor">
@@ -1375,6 +1667,16 @@ p, li { white-space: pre-wrap; }
         </property>
         <property name="text">
          <string>Ok</string>
+        </property>
+        <property name="icon">
+         <iconset resource="resources.qrc">
+          <normaloff>:/images/icons/button_ok.png</normaloff>:/images/icons/button_ok.png</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>32</width>
+          <height>32</height>
+         </size>
         </property>
        </widget>
       </item>
@@ -1389,7 +1691,6 @@ p, li { white-space: pre-wrap; }
   <tabstop>cbAccel</tabstop>
   <tabstop>lwThemes</tabstop>
   <tabstop>bGraphicsBack</tabstop>
-  <tabstop>bGraphicsOk</tabstop>
   <tabstop>cbVolumeSound</tabstop>
   <tabstop>cbMuteSound</tabstop>
   <tabstop>cbVolumeMusic</tabstop>
@@ -1432,6 +1733,8 @@ p, li { white-space: pre-wrap; }
   <tabstop>bPauseAbandon</tabstop>
   <tabstop>bPauseBack</tabstop>
  </tabstops>
- <resources/>
+ <resources>
+  <include location="resources.qrc"/>
+ </resources>
  <connections/>
 </ui>

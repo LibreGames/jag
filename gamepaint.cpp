@@ -10,6 +10,8 @@
 #include "gamestat.h"
 #include "version.h"
 
+#include <QTimer>
+
 void GameScene::drawBackground(QPainter *painter, const QRectF &)
 {
   if (myLock)

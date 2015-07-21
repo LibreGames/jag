@@ -1,7 +1,7 @@
 #ifndef GAMEBACKGROUND_H
 #define GAMEBACKGROUND_H
 
-#include <QtGui>
+#include <QPainter>
 
 struct PlayerInfo;
 struct BgPrivate;

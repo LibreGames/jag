@@ -1,9 +1,8 @@
 #ifndef GAMEITEM_H
 #define GAMEITEM_H
 
-#include <QtGui>
-
 #include "defines.h"
+
 
 class GameItem
 {

@@ -2,7 +2,10 @@
 #include "gamewidget.h"
 #include "gamesound.h"
 
-GameProfile* gameProfile = 0;
+#include <QDir>
+#include <QFile>
+
+GameProfile *gameProfile = 0;
 
 //--------------------------------
 void LevelPackInfo::init()

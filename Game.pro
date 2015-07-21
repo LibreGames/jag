@@ -3,7 +3,7 @@
 # -------------------------------------------------
 QT += xml \
     opengl
-unix: { 
+unix: {
     TARGET = ./bin/jag
     target.path = /usr/local/bin/
     INSTALLS += target
@@ -12,7 +12,7 @@ unix: {
     INSTALLS += datas
     LIBS += -lXrandr
 }
-win32: { 
+win32: {
     TARGET = ../bin/jag
     INCLUDEPATH += winlibs/SDL-1.2.13/include/SDL \
         winlibs/SDL_mixer-1.2.8
@@ -23,6 +23,7 @@ win32: {
     RC_FILE = res.rc
 }
 LIBS += -lSDLmain \
+    -lSDL \
     -lSDL_mixer
 TEMPLATE = app
 SOURCES += main.cpp \

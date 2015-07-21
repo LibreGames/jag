@@ -1,6 +1,9 @@
 #ifndef GAMESTAT_H
 #define GAMESTAT_H
 
+#include <QRect>
+#include <QList>
+
 struct StatInfo
 {
   StatInfo();
