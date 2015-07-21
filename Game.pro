@@ -5,9 +5,9 @@ QT += xml \
     opengl
 unix: {
     TARGET = ./bin/jag
-    target.path = /usr/local/bin/
+    target.path = /usr/games/
     INSTALLS += target
-    datas.path = /usr/local/games/jag
+    datas.path = /usr/share/games/jag
     datas.files = data
     INSTALLS += datas
     LIBS += -lXrandr
@@ -22,7 +22,7 @@ win32: {
         -lSDL.dll
     RC_FILE = res.rc
 }
-LIBS += -lSDLmain \
+LIBS += -lX11 \
     -lSDL \
     -lSDL_mixer
 TEMPLATE = app
