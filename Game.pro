@@ -21,6 +21,9 @@ unix: {
     icon.path = /usr/share/icons/hicolor/256x256/apps/
     icon.files = dist/jag.png
     INSTALLS += icon
+    appdata.path = /usr/share/appdata/
+    appdata.files = dist/jag.appdata.xml
+    INSTALLS += appdata
     LIBS += -lXrandr
 }
 win32: {
