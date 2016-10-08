@@ -15,6 +15,12 @@ unix: {
     datas.path = /usr/share/games/jag
     datas.files = data
     INSTALLS += datas
+    desktop.path = /usr/share/applications/
+    desktop.files = dist/jag.desktop
+    INSTALLS += desktop
+    icon.path = /usr/share/icons/hicolor/256x256/apps/
+    icon.files = dist/jag.png
+    INSTALLS += icon
     LIBS += -lXrandr
 }
 win32: {

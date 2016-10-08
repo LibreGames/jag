@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=JAG
+GenericName=Arcade-puzzle 2D game
+Comment=Arcade and puzzle 2D game in which you have to break all the target pieces
+Exec=jag
+Icon=jag
+Type=Application
+Categories=Game;LogicGame;
