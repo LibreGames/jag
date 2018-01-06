@@ -1,53 +1,4 @@
-JAG: Freeware crossplatform 2D arcade-puzzle game
-
-version 0.3.3
-
-XlabSoft & Industrial Infosystems 2009-2012
-
-----------------------------------------------------------------------------------
-LICENSE
-
-This software is free and is distributed according to GPL and compatible licenses.
-Full text of GPL and more you can read here: 
-  http://www.fsf.org/licensing/licenses/gpl.html
-
-----------------------------------------------------------------------------------
-ABOUT THE JAG
-
-JAG is a match-three 2D game which runs on Linux, Windows and FreeBSD. 
-JAG was created using only free development software and free resources.
-
-----------------------------------------------------------------------------------
-SUPPORTED PLATFORMS
-
-Since JAG is based on Qt5 (or Qt4) and SDL frameworks, all the platforms
-supported by them should be able to build and launch the game.
-
-In particular:
-- MS Windows 7, Vista, XP
-- All Linux OS
-- FreeBSD
-
-----------------------------------------------------------------------------------
-INSTALLATION
-
-Installation manual can be found here: http://jag.xlabsoft.com/install.php
-
-Note that the version in this repo can also be built with Qt 5.
-It requires the following Qt5 components:
- - Qt5 OpenGL
- - Qt5 X11Extras
- - Qt5 Xml
-
-----------------------------------------------------------------------------------
-UPDATES
-  
-Updates, additional level packs and schemes can be downloaded from JAG's website: 
-
-http://jag.xlabsoft.com 
-
----------------------------------------------------------------------------------
-CHANGELOG
+# CHANGELOG
 
 0.3.3 - 8 October 2016
 
@@ -82,7 +33,7 @@ CHANGELOG
 	- alternative detection of video modes on X11 if xrandr fails
 	- some compiler warnings removed
 	- some memory leaks removed
-	
+
 
 0.3.0
 
@@ -92,7 +43,7 @@ CHANGELOG
 	- added support of different resolutions
 	- player configuration dialog simplified
 	- added version output
-	
+
 - fixes:
 	- fixed potential crash during play
 	- fixed issue when loading a scheme with no background files
@@ -103,17 +54,17 @@ CHANGELOG
 - gameplay changes:
 	- added new level pack 'SunZero' with 50 levels
 	- added Russian language translation
-	
+
 - fixes:
     - fixed graphic themes selection dialog
 
-	
+
 0.2.5
 
 - improvements:
 	- levelpack format improved
 	- level editor added to install
-	
+
 - fixes:
     - some missing resources files added to install
 	- changed colors for collected items
@@ -133,7 +84,7 @@ CHANGELOG
     - fixed level start with no level pack available
 	- fixed new game settings (mode and difficulty)
 	- fixed issue with wrong path to data on Linux
-	
+
 - improvements:
 	- clicking on player name and levelpack in main menu shows menu
 
@@ -146,7 +97,7 @@ CHANGELOG
 	- item types count on level is const for difficulty level
       (easy - 4, normal - 5, hard - 6)
 	- no time x1.5 bonus for easy level
-	
+
 - fixes:
     - fixed hanging when no moves on level
 	- fixed odd scoring when no data folder found
@@ -163,10 +114,10 @@ CHANGELOG
 	- linux: now should work without installation
 	- fixed flashing of items after appear at the beginning of the level
 	- no hint drawing while showing statistics
-	
+
 - improvements:
 	- added "Restart level" button
-	- improved move hinting 
+	- improved move hinting
 	- now tools can be canceled by placing back
 	- game progress saved for each levelpack
 	- player profile format changed to XML
@@ -182,7 +133,7 @@ CHANGELOG
 	- fix of occasional reactivation of the tools while starting a new level
 	- no hint drawing for inactive tools
 	- fixed changing of the theme during the game
-	
+
 - improvements:
 	- added auto-pause when loosing focus
 
